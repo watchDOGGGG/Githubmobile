@@ -2,7 +2,6 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import tw from 'twrnc'
 import Icon from 'react-native-vector-icons/Octicons'
-import { FlatList } from 'react-native'
 import { color } from './styles/app'
 
 export default function Footer() {

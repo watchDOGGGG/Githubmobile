@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Platform, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView,RefreshControl } from 'react-native';
 import Icon from 'react-native-vector-icons/Octicons';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import ProfileContainer from '../container/home/profile_container';
@@ -17,12 +17,13 @@ import Repository from './repository';
 import Starred from './starred'
 import Spinner from 'react-native-loading-spinner-overlay';
 
+const wait = (timeout) => {
+  return new Promise(resolve => setTimeout(resolve, timeout));
+}
+
 export default function Home({ navigation }) {
 
   const Stack = createStackNavigator();
-
-
-  
   const stackOptions = {
     headerLeft: () => (
         <TouchableOpacity style={tw`flex-row`} onPress={() => navigation.goBack()}>
@@ -74,7 +75,9 @@ export default function Home({ navigation }) {
 function User({ navigation }) {
   const dispatch = useDispatch()
   const [loading,setLoading] = React.useState(true)
+  const [refreshing, setRefreshing] = React.useState(false);
 
+   //Fetch user profile info
   const { } = useQuery(['profile'], async () => {
     const request = await fetch('https://api.github.com/users/sdras')
 
@@ -83,18 +86,27 @@ function User({ navigation }) {
     dispatch(setUser(response))
   })
 
+   //Fetch All repos from endpoint and store to redux state
   const { } = useQuery(['Repos'], async () => {
     const request = await fetch('https://api.github.com/users/sdras/repos')
     const response = await request.json()
     dispatch(setRepos(response))
   })
  
+   //Fetch All starred from endpoint and store to redux state
   const { } = useQuery(['Starred'], async () => {
     const request = await fetch('https://api.github.com/users/sdras/starred')
     const response = await request.json()
     dispatch(setStarred(response))
   })
  
+  //Set onScreen refresh to reload data
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
+
+
   const containers = [
     {
       render: <ProfileContainer navigate={navigation} />,
@@ -126,30 +138,36 @@ function User({ navigation }) {
 
   return (
     loading === false?
-    <FlatList
-    keyExtractor={item => item.id}
-      data={containers}
-      renderItem={({ item }) => (
-        <View>
-          {item.render}
-        </View>
-      )}
-    />
-    :
+      <FlatList
+        refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+          />
+        }
+        keyExtractor={item => item.id}
+        data={containers}
+        renderItem={({ item }) => (
+          <View>
+            {item.render}
+          </View>
+        )}
+      />
+      :
       <Spinner
         visible={loading}
         textContent={'Loading...'}
-    />
+      />
   )
 }
 
 const styles = StyleSheet.create({
-   
+
   iconLeft: {
     paddingLeft: 20
   },
   iconRight: {
-      paddingRight: 20
-    },
+    paddingRight: 20
+  },
  
 });
