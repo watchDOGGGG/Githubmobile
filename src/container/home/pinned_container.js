@@ -17,7 +17,7 @@ export default function Pinnedcontainer() {
         <Text style={tw`ml-6`}>Pinned</Text>
       </View>
 
-      <View style={tw``}>
+      <View style={tw`mr-3`}>
         <FlatList 
         horizontal
         keyExtractor={item => item.id}

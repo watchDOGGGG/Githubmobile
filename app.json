@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "GMA",
+    "name": "Github mobile profile",
     "slug": "GMA",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -28,6 +28,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "A remake of github mobile app",
+    "githubUrl": "https://github.com/watchDOGGGG/Githubmobile"
   }
 }

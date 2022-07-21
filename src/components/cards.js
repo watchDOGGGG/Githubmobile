@@ -7,7 +7,7 @@ import { color, StackLanguage } from '../styles/app'
 export default function Cards({item}) {
 
   return (
-    <View style={tw`bg-white p-3 rounded-2 w-90 ml-4`}>
+    <View style={tw`bg-white p-3 rounded-2 w-90 ml-2`}>
       <View style={tw`flex flex-row`}>
         <Image style={[styles.image, tw`rounded-5`]} source={{ uri:item.owner.avatar_url }} />
         <Text style={tw`ml-2 text-gray-400 p-1`}>{item.owner.login}</Text>
