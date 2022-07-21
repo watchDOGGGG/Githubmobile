@@ -15,6 +15,7 @@ import { color } from '../styles/app';
 import { createStackNavigator } from "@react-navigation/stack";
 import Repository from './repository';
 import Starred from './starred'
+import Spinner from 'react-native-loading-spinner-overlay';
 
 export default function Home({ navigation }) {
 
@@ -72,11 +73,13 @@ export default function Home({ navigation }) {
 
 function User({ navigation }) {
   const dispatch = useDispatch()
+  const [loading,setLoading] = React.useState(true)
 
   const { } = useQuery(['profile'], async () => {
     const request = await fetch('https://api.github.com/users/sdras')
 
     const response = await request.json()
+    setLoading(false)
     dispatch(setUser(response))
   })
 
@@ -122,6 +125,7 @@ function User({ navigation }) {
   ]
 
   return (
+    loading === false?
     <FlatList
     keyExtractor={item => item.id}
       data={containers}
@@ -130,6 +134,11 @@ function User({ navigation }) {
           {item.render}
         </View>
       )}
+    />
+    :
+      <Spinner
+        visible={loading}
+        textContent={'Loading...'}
     />
   )
 }

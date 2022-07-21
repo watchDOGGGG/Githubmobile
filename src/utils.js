@@ -29,90 +29,9 @@ export const userArchive = [
     },
 ]
 
-export const pinned = [
-    {
-        image: 'https://i.ytimg.com/vi/vdCDMW7N35E/maxresdefault.jpg',
-        topic: 'awesome-actions',
-        name: 'prince randy',
-        content:'some text for testing of list of actions to use on github',
-        star: 19154,
-    },
-    {
-        image: 'https://i.ytimg.com/vi/vdCDMW7N35E/maxresdefault.jpg',
-        topic: 'awesome-actions',
-        name: 'prince randy',
-        content:'some text for testing of list of actions to use on github',
-        star: 19154,
-    },
-    {
-        image: 'https://i.ytimg.com/vi/vdCDMW7N35E/maxresdefault.jpg',
-        topic: 'awesome-actions',
-        name: 'prince randy',
-        content:'some text for testing of list of actions to use on github',
-        star: 19154,
-    },
-    {
-        image: 'https://i.ytimg.com/vi/vdCDMW7N35E/maxresdefault.jpg',
-        topic: 'awesome-actions',
-        name: 'prince randy',
-        content:'some text for testing of list of actions to use on github',
-        star: 19154,
-    },
-]
 
 export const noteTxt = {
     topic: `I like making things, i'm a fairly curious person.`,
     note: `I make tools for developers, projects, and am on the Vue.js core team. i'm also VP of Developer Experience at Netlify, a company that makes it quick and straightforward to deploy sites. I'm also a staff writer for Css-Tricks, and wrote a book on SVG Animations`
-}
 
-export const repositoryList = [
-    {
-        name: 'awesome-actions',
-        content:'Acurated list of awesome actions to use on github',
-        count: 0,
-        iconColor:'',
-        stack: 'Vue'
-    },
-    {
-        name: 'awesome-actions',
-        content:'Acurated list of awesome actions to use on github',
-        count: 0,
-        iconColor:'',
-        stack: 'Javascript'
-    },
-    {
-        name: 'awesome-actions',
-        content:'Acurated list of awesome actions to use on github',
-        count: 0,
-        iconColor:'',
-        stack: 'Vue'
-    },
-    {
-        name: 'awesome-actions',
-        content:'Acurated list of awesome actions to use on github',
-        count: 0,
-        iconColor:'',
-        stack: 'Vue'
-    },
-    {
-        name: 'awesome-actions',
-        content:'Acurated list of awesome actions to use on github',
-        count: 0,
-        iconColor:'',
-        stack: 'Vue'
-    },
-    {
-        name: 'awesome-actions',
-        content:'Acurated list of awesome actions to use on github',
-        count: 0,
-        iconColor:'',
-        stack: 'Vue'
-    },
-    {
-        name: 'awesome-actions',
-        content:'Acurated list of awesome actions to use on github',
-        count: 0,
-        iconColor:'',
-        stack: 'Vue'
-    },
-]
+}

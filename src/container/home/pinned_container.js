@@ -3,7 +3,6 @@ import React from 'react'
 import tw from 'twrnc'
 import Icon from 'react-native-vector-icons/Octicons'
 import Cards from '../../components/cards'
-import { pinned } from '../../utils'
 import { useSelector } from 'react-redux'
 import { color } from '../../styles/app'
 
