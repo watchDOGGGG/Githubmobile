@@ -29,23 +29,3 @@ export default function Footer() {
         </View>
     )
 }
-
-const FooterRoute = [
-    {
-        name:'Home',
-        icon:'home'
-    },
-    {
-        name:'Notification',
-        icon:'bell'
-    },
-    {
-        name:'Explore',
-        icon:'telescope'
-    },
-    {
-        name:'Profile',
-        icon:'person'
-    },
-
-]

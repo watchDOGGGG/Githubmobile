@@ -21,6 +21,7 @@ export default function Pinnedcontainer() {
       <View style={tw``}>
         <FlatList 
         horizontal
+        keyExtractor={item => item.id}
         data={repos}
         renderItem={({item}) =>(
           <Cards item={item}/>

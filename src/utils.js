@@ -3,25 +3,29 @@ export const userArchive = [
         title: 'Repositories',
         count: 100,
         icon: 'repo',
-        color: 'bg-gray-800'
+        color: 'bg-gray-800',
+        id:1
     },
     {
         title: 'Starred',
         count: 344,
         icon: 'star',
-        color: 'bg-yellow-400'
+        color: 'bg-yellow-400',
+        id:2
     },
     {
         title: 'Organizations',
         count: 3,
         icon: 'organization',
-        color: 'bg-yellow-600'
+        color: 'bg-yellow-600',
+        id:3
     },
     {
         title: 'Sponsoring',
         count: 11,
         icon: 'heart',
-        color: 'bg-pink-500'
+        color: 'bg-pink-500',
+        id:4
     },
 ]
 

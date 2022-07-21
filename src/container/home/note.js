@@ -10,7 +10,7 @@ export default function Note() {
     <View style={tw`p-4 bg-white`}>
       <View style={tw`flex flex-row border-b border-gray-300 pb-3`}>
         <Text style={tw`text-black font-bold text-2xl mr-1`}>Sup Nerds</Text>
-        <Icon name="square" size={24} color={"#00000"}/>
+        <Icon name="square" size={24} color={"#0000"}/>
       </View>
 
       <View  style={tw`pt-3`}>

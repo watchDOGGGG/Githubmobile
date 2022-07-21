@@ -39,7 +39,7 @@ export default function RootNavigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home" screenOptions={screenOptions}>
-        <Stack.Screen name="Home" component={Home} options={stackOptions} />
+        <Stack.Screen name="User" component={Home} options={stackOptions} />
       </Stack.Navigator>
       <Footer/>
     </NavigationContainer>

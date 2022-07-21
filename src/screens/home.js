@@ -94,13 +94,16 @@ function User({ navigation }) {
  
   const containers = [
     {
-      render: <ProfileContainer navigate={navigation} />
+      render: <ProfileContainer navigate={navigation} />,
+      id:1
     },
     {
-      render: <Userarchive navigate={navigation} />
+      render: <Userarchive navigate={navigation} />,
+      id:2
     },
     {
-      render: <Pinnedcontainer navigate={navigation} />
+      render: <Pinnedcontainer navigate={navigation} />,
+      id:3
     },
     {
       render: <View style={tw`p-4 flex flex-row justify-between mt-3`}>
@@ -120,6 +123,7 @@ function User({ navigation }) {
 
   return (
     <FlatList
+    keyExtractor={item => item.id}
       data={containers}
       renderItem={({ item }) => (
         <View>
